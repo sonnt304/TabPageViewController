@@ -187,8 +187,11 @@ extension TabView {
     /**
      Center the current cell after page swipe
      */
-    func scrollToHorizontalCenter() {
+    func scrollToHorizontalCenter(refreshCurrentCell: Bool = false) {
         let indexPath = IndexPath(item: currentIndex, section: 0)
+        if refreshCurrentCell {
+            collectionView.reloadItems(at: [indexPath])
+        }
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         collectionViewContentOffsetX = collectionView.contentOffset.x
     }

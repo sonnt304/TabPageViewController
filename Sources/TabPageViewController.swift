@@ -349,6 +349,8 @@ extension TabPageViewController: UIPageViewControllerDelegate {
         }
 
         tabView.updateCollectionViewUserInteractionEnabled(true)
+        
+        tabView.scrollToHorizontalCenter(refreshCurrentCell: true)
     }
 }
 
