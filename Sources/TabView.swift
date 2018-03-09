@@ -89,7 +89,7 @@ internal class TabView: UIView {
 
         collectionView.scrollsToTop = false
 
-        currentBarView.backgroundColor = option.currentColor
+        currentBarView.backgroundColor = option.currentBarColor
         currentBarViewHeightConstraint.constant = option.currentBarHeight
         if !isInfinity {
             currentBarView.removeFromSuperview()
