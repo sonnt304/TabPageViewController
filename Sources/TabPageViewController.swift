@@ -73,6 +73,10 @@ open class TabPageViewController: UIPageViewController {
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
     }
+    
+    public func moveToInitialTab(animated: Bool) {
+        // TODO
+    }
 }
 
 
