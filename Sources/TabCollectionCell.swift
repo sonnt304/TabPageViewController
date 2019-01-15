@@ -14,6 +14,8 @@ class TabCollectionCell: UICollectionViewCell {
     var option: TabPageOption = TabPageOption() {
         didSet {
             currentBarViewHeightConstraint.constant = option.currentBarHeight
+            labelLeftConstraint.constant = option.itemPadding
+            labelRightConstraint.constant = option.itemPadding
         }
     }
     var item: String = "" {
@@ -36,9 +38,11 @@ class TabCollectionCell: UICollectionViewCell {
         }
     }
 
-    @IBOutlet fileprivate weak var itemLabel: UILabel!
+    @IBOutlet fileprivate weak var itemLabel: BorderedLabel!
     @IBOutlet fileprivate weak var currentBarView: UIView!
     @IBOutlet fileprivate weak var currentBarViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var labelLeftConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var labelRightConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -64,14 +68,17 @@ class TabCollectionCell: UICollectionViewCell {
 
 extension TabCollectionCell {
     override var intrinsicContentSize : CGSize {
-        let width: CGFloat
+        var width: CGFloat
         if let tabWidth = option.tabWidth , tabWidth > 0.0 {
             width = tabWidth
         } else {
             width = itemLabel.intrinsicContentSize.width + option.tabMargin * 2
         }
-
+      
+        width += option.itemPadding
+      
         let size = CGSize(width: width, height: option.tabHeight)
+        
         return size
     }
 
@@ -85,11 +92,14 @@ extension TabCollectionCell {
 
     func highlightTitle() {
         itemLabel.textColor = option.currentColor
+        itemLabel.borderRadius = option.itemRadius
+        itemLabel.backgroundColor = option.itemSelectedColor
         itemLabel.font = UIFont.boldSystemFont(ofSize: option.fontSize)
     }
 
     func unHighlightTitle() {
         itemLabel.textColor = option.defaultColor
+        itemLabel.backgroundColor = option.pageBackgoundColor
         itemLabel.font = UIFont.systemFont(ofSize: option.fontSize)
     }
 }

@@ -19,6 +19,7 @@ class LimitedTabPageViewController: TabPageViewController {
         tabItems = [(vc1, "First"), (vc2, "Second")]
         option.tabWidth = view.frame.width / CGFloat(tabItems.count)
         option.hidesTopViewOnSwipeType = .all
+      
     }
 
     required init?(coder aDecoder: NSCoder) {
