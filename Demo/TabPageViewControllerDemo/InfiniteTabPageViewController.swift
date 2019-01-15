@@ -23,12 +23,12 @@ class InfiniteTabPageViewController: TabPageViewController {
         vc4.view.backgroundColor = UIColor(red: 149/255, green: 252/255, blue: 197/255, alpha: 1.0)
         let vc5 = UIViewController()
         vc5.view.backgroundColor = UIColor(red: 252/255, green: 182/255, blue: 106/255, alpha: 1.0)
-        tabItems = [(vc1, "Mon."), (vc2, "Tue."), (vc3, "Wed."), (vc4, "Thu."), (vc5, "Fri.")]
+        tabItems = [(vc1, "Mon."), (vc2, "ランキング"), (vc3, "ライフスタイル"), (vc4, "1"), (vc5, "22")]
         isInfinity = true
         option.currentColor = .white
-        option.tabMargin = 30.0
-        option.itemRadius = 7.0
-        option.itemPadding = 5.0
+        option.tabMargin = 20.0
+        option.itemRadius = 15.0
+        option.itemPadding = 15.0
         option.itemSelectedColor = UIColor(red: 246/255, green: 175/255, blue: 32/255, alpha: 1.0)
         option.currentBarColor = .clear
     }

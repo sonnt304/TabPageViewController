@@ -51,7 +51,7 @@ class TabCollectionCell: UICollectionViewCell {
     }
 
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        if item.count == 0 {
+        if item.isEmpty {
             return CGSize.zero
         }
 
@@ -74,9 +74,9 @@ extension TabCollectionCell {
         } else {
             width = itemLabel.intrinsicContentSize.width + option.tabMargin * 2
         }
-      
-        width += option.itemPadding
-      
+        if option.itemPadding > 0 {
+          width += option.tabHeight
+        }
         let size = CGSize(width: width, height: option.tabHeight)
         
         return size
@@ -99,7 +99,7 @@ extension TabCollectionCell {
 
     func unHighlightTitle() {
         itemLabel.textColor = option.defaultColor
-        itemLabel.backgroundColor = option.pageBackgoundColor
+        itemLabel.backgroundColor = .clear
         itemLabel.font = UIFont.systemFont(ofSize: option.fontSize)
     }
 }

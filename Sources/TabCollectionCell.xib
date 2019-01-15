@@ -19,8 +19,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWJ-4f-Lz7" customClass="BorderedLabel" customModule="TabPageViewController" customModuleProvider="target">
-                        <rect key="frame" x="10" y="17" width="131" height="16"/>
+                        <rect key="frame" x="10" y="2" width="131" height="46"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="P0r-Sg-ZRt"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -52,6 +55,7 @@
                 <constraint firstAttribute="bottom" secondItem="UkM-Ly-JBr" secondAttribute="bottom" id="J0J-D8-GeH"/>
                 <constraint firstItem="IWJ-4f-Lz7" firstAttribute="centerY" secondItem="Njo-bq-MVA" secondAttribute="centerY" id="Um2-ZX-MDO"/>
                 <constraint firstItem="IWJ-4f-Lz7" firstAttribute="centerY" secondItem="Njo-bq-MVA" secondAttribute="centerY" id="YZv-VV-EQn"/>
+                <constraint firstItem="IWJ-4f-Lz7" firstAttribute="top" secondItem="Njo-bq-MVA" secondAttribute="top" constant="2" id="leo-rn-lAR"/>
                 <constraint firstAttribute="trailing" secondItem="Sgu-AL-NbW" secondAttribute="trailing" priority="750" id="mA5-Ef-SrJ"/>
                 <constraint firstItem="UkM-Ly-JBr" firstAttribute="top" secondItem="Sgu-AL-NbW" secondAttribute="bottom" priority="750" id="qYV-Rl-all"/>
             </constraints>

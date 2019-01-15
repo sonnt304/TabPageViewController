@@ -29,7 +29,7 @@ public struct TabPageOption {
     public var currentBarColor: UIColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0)
     public var tabBackgroundColor: UIColor = .white
     public var pageBackgoundColor: UIColor = UIColor.white
-    public var itemSelectedColor: UIColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0)
+    public var itemSelectedColor: UIColor = .clear
     public var itemRadius: CGFloat = 0.0
     public var itemPadding: CGFloat = 0.0
     public var isTranslucent: Bool = true
