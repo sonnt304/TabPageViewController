@@ -92,7 +92,8 @@ extension TabCollectionCell {
 
     func highlightTitle() {
         itemLabel.textColor = option.currentColor
-        itemLabel.borderRadius = option.itemRadius
+      
+        itemLabel.borderRadius = option.tabHeight / 2 > option.itemRadius ? option.itemRadius : option.tabHeight / 2
         itemLabel.backgroundColor = option.itemSelectedColor
         itemLabel.font = UIFont.boldSystemFont(ofSize: option.fontSize)
     }

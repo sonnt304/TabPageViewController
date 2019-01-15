@@ -27,6 +27,7 @@ class InfiniteTabPageViewController: TabPageViewController {
         isInfinity = true
         option.currentColor = .white
         option.tabMargin = 20.0
+      option.tabHeight = 50
         option.itemRadius = 15.0
         option.itemPadding = 15.0
         option.itemSelectedColor = UIColor(red: 246/255, green: 175/255, blue: 32/255, alpha: 1.0)
