@@ -160,7 +160,7 @@ extension TabView {
 
             let distance = (currentCell.frame.width / 2.0) + (nextCell.frame.width / 2.0)
             let scrollRate = contentOffsetX / frame.width
-
+          
             if fabs(scrollRate) > 0.6 {
                 nextCell.highlightTitle()
                 currentCell.unHighlightTitle()
@@ -202,7 +202,7 @@ extension TabView {
      - parameter index: Next Index
      */
     func updateCurrentIndex(_ index: Int, shouldScroll: Bool) {
-        deselectVisibleCells()
+       // deselectVisibleCells()
 
         currentIndex = isInfinity ? index + pageTabItemsCount : index
 
@@ -280,7 +280,7 @@ extension TabView {
     fileprivate func deselectVisibleCells() {
         collectionView
             .visibleCells
-            .flatMap { $0 as? TabCollectionCell }
+          .compactMap { $0 as? TabCollectionCell }
             .forEach { $0.isCurrent = false }
     }
 }
